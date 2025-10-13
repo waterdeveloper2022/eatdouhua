@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>豆花點餐小幫手</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -528,7 +528,7 @@
         <div class="header">
             <h1><i class="fas fa-bowl-rice"></i> 豆花點餐小幫手(統元豆花)</h1>
             <div class="subtitle">
-                <i class="fas fa-ghost"></i>
+                <i class="fas fa-heart"></i>
                 <span>萬聖節特別版 🎃 美味豆花，現在就點！</span>
             </div>
         </div>
@@ -547,7 +547,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+				<div class="form-group">
                     <label for="unit" class="required">
                         <i class="fas fa-building"></i>
                         單位
@@ -602,7 +602,7 @@
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="kidney" name="topping" value="彎豆">
-                            <label for="kidney">🫘 彎豆</label>
+                            <label for="kidney">🌱 彎豆</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="tapioca" name="topping" value="粉圓">
@@ -664,11 +664,13 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
+            // 隱藏所有錯誤訊息
             const errorMessages = document.querySelectorAll('.error-message');
             errorMessages.forEach(msg => msg.style.display = 'none');
 
             let isValid = true;
 
+            // 檢查姓名
             const nameInput = document.getElementById('name');
             if (nameInput.value.trim() === '') {
                 document.getElementById('name-error').style.display = 'block';
@@ -676,13 +678,16 @@
                 isValid = false;
             }
 
-            const unitSelect = document.getElementById('unit');
-            if (unitSelect.value === '') {
+            // 檢查單位
+            const unitInput = document.getElementById('unit');
+            if (unitInput.value.trim() === '') {
                 document.getElementById('unit-error').style.display = 'block';
-                if (isValid) unitSelect.focus();
+                 if (isValid) unitInput.focus();
                 isValid = false;
             }
 
+
+            // 檢查種類
             const typeSelect = document.getElementById('type');
             if (typeSelect.value === '') {
                 document.getElementById('type-error').style.display = 'block';
@@ -690,6 +695,7 @@
                 isValid = false;
             }
 
+            // 檢查配料
             const toppingCheckboxes = document.querySelectorAll('input[name="topping"]:checked');
             if (toppingCheckboxes.length === 0 || toppingCheckboxes.length > 3) {
                 document.getElementById('topping-error').style.display = 'block';
@@ -697,18 +703,22 @@
             }
 
             if (isValid) {
+                // 添加載入效果
                 container.classList.add('loading');
                 
                 const name = nameInput.value;
-                const unit = unitSelect.value;
+				const unit = unitInput.value;
                 const type = typeSelect.value;
+
                 const toppings = Array.from(toppingCheckboxes).map(cb => cb.value).join(', ');
                 const ice = document.querySelector('input[name="ice"]:checked').value;
                 
                 setTimeout(() => {
+                    
+                    // Google Forms 提交
                     const data = {
                         'entry.2104530092': name,
-                        'entry.289096839': unit,
+						'entry.289096839': unit,
                         'entry.989584200': type,
                         'entry.579343790': toppings,
                         'entry.736923634': ice
@@ -732,12 +742,14 @@
             }
         });
 
+        // 豆花種類變更時的邏輯
         const typeSelect = document.getElementById('type');
         const barleyCheckbox = document.getElementById('barley');
         
         function updateToppingAvailability() {
             const selectedType = typeSelect.value;
             
+            // 如果選擇仙草豆花，禁用薏仁湯選項
             if (selectedType === '仙草') {
                 barleyCheckbox.disabled = true;
                 barleyCheckbox.checked = false;
@@ -752,6 +764,7 @@
 
         typeSelect.addEventListener('change', updateToppingAvailability);
 
+        // 即時驗證配料數量
         const toppingCheckboxes = document.querySelectorAll('input[name="topping"]');
         toppingCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function() {
@@ -766,4 +779,34 @@
                     });
                 } else {
                     toppingCheckboxes.forEach(cb => {
-                        if (cb.id !== 'barley' || typeSelect.value !== '
+                        if (cb.id !== 'barley' || typeSelect.value !== '仙草') {
+                            cb.disabled = false;
+                            cb.parentElement.style.opacity = '1';
+                        }
+                    });
+                    // 重新檢查豆花種類限制
+                    updateToppingAvailability();
+                }
+                
+                // 隱藏錯誤訊息
+                if (checkedCount > 0 && checkedCount <= 3) {
+                    document.getElementById('topping-error').style.display = 'none';
+                }
+            });
+        });
+
+        // 輸入框即時驗證
+        document.getElementById('name').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('name-error').style.display = 'none';
+            }
+        });
+
+        document.getElementById('type').addEventListener('change', function() {
+            if (this.value !== '') {
+                document.getElementById('type-error').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
