@@ -14,23 +14,23 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e8d5f2 0%, #d4b5e8 25%, #c9a8e8 50%, #b89fd9 75%, #d4b5e8 100%);
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e8f0 25%, #c0dce8 50%, #b0d0e0 75%, #d4e8f0 100%);
             min-height: 100vh;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* 萬聖節漂浮裝飾 */
+        /* 立冬漂浮裝飾 - 雪花、楓葉、暖陽 */
         body::before {
-            content: '🎃 👻 🦇 🕷️ 🍬 🕸️ 🌙 ⭐ 🎃 👻 🦇 🕷️';
+            content: '❄️ 🍂 ☀️ 🌨️ 🍁 ☁️ 🌾 ⛄ ❄️ 🍂 ☀️ 🌨️';
             position: fixed;
             top: -50px;
             left: 0;
             width: 100%;
             height: 100%;
             font-size: 32px;
-            opacity: 0.25;
+            opacity: 0.3;
             pointer-events: none;
             z-index: 1;
             display: flex;
@@ -38,10 +38,10 @@
             justify-content: space-around;
             align-items: flex-start;
             gap: 80px;
-            animation: floatingGhosts 25s linear infinite;
+            animation: floatingWinter 25s linear infinite;
         }
 
-        @keyframes floatingGhosts {
+        @keyframes floatingWinter {
             0% { 
                 transform: translateY(-100px) rotate(0deg);
             }
@@ -50,7 +50,7 @@
             }
         }
 
-        /* 神秘紫色光暈 */
+        /* 暖冬光暈效果 */
         body::after {
             content: '';
             position: fixed;
@@ -59,12 +59,12 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(186, 85, 211, 0.2) 15px, transparent 15px),
-                radial-gradient(circle at 75% 35%, rgba(147, 112, 219, 0.18) 20px, transparent 20px),
-                radial-gradient(circle at 45% 65%, rgba(138, 43, 226, 0.15) 12px, transparent 12px),
-                radial-gradient(circle at 85% 75%, rgba(153, 102, 255, 0.22) 18px, transparent 18px),
-                radial-gradient(circle at 15% 80%, rgba(186, 85, 211, 0.17) 14px, transparent 14px),
-                radial-gradient(circle at 60% 20%, rgba(147, 112, 219, 0.2) 16px, transparent 16px);
+                radial-gradient(circle at 25% 25%, rgba(100, 181, 246, 0.2) 15px, transparent 15px),
+                radial-gradient(circle at 75% 35%, rgba(77, 182, 172, 0.18) 20px, transparent 20px),
+                radial-gradient(circle at 45% 65%, rgba(255, 183, 77, 0.15) 12px, transparent 12px),
+                radial-gradient(circle at 85% 75%, rgba(129, 199, 212, 0.22) 18px, transparent 18px),
+                radial-gradient(circle at 15% 80%, rgba(174, 213, 129, 0.17) 14px, transparent 14px),
+                radial-gradient(circle at 60% 20%, rgba(100, 181, 246, 0.2) 16px, transparent 16px);
             background-size: 
                 250px 250px,
                 220px 220px,
@@ -72,12 +72,12 @@
                 200px 200px,
                 260px 260px,
                 240px 240px;
-            animation: mysticalGlow 20s ease-in-out infinite;
+            animation: winterGlow 20s ease-in-out infinite;
             z-index: 0;
             opacity: 0.6;
         }
 
-        @keyframes mysticalGlow {
+        @keyframes winterGlow {
             0%, 100% { 
                 transform: translate(0, 0) scale(1);
                 opacity: 0.6;
@@ -93,23 +93,23 @@
         }
 
         .container {
-            background: rgba(255, 250, 255, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
             border-radius: 28px;
             box-shadow: 
-                0 20px 50px rgba(138, 43, 226, 0.3),
-                0 0 0 3px rgba(186, 85, 211, 0.3),
-                0 0 30px rgba(147, 112, 219, 0.2);
+                0 20px 50px rgba(77, 182, 172, 0.3),
+                0 0 0 3px rgba(129, 199, 212, 0.3),
+                0 0 30px rgba(100, 181, 246, 0.2);
             width: 100%;
             max-width: 450px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            animation: spookyAppear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: winterAppear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             z-index: 10;
         }
 
-        @keyframes spookyAppear {
+        @keyframes winterAppear {
             0% {
                 opacity: 0;
                 transform: scale(0.7) translateY(50px) rotate(-5deg);
@@ -121,19 +121,19 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #b19cd9, #9575cd, #7e57c2);
+            background: linear-gradient(135deg, #4db6ac, #26a69a, #00897b);
             padding: 35px 30px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 20px rgba(126, 87, 194, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 137, 123, 0.4);
         }
 
         .header::before {
-            content: '👻';
+            content: '❄️';
             position: absolute;
             font-size: 40px;
-            opacity: 0.15;
-            animation: ghostFloat 3s ease-in-out infinite;
+            opacity: 0.2;
+            animation: snowFloat 3s ease-in-out infinite;
         }
 
         .header::before {
@@ -141,7 +141,7 @@
             left: 20px;
         }
 
-        @keyframes ghostFloat {
+        @keyframes snowFloat {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(10deg); }
         }
@@ -153,7 +153,7 @@
             left: 0;
             right: 0;
             height: 25px;
-            background: linear-gradient(135deg, #b19cd9, #9575cd, #7e57c2);
+            background: linear-gradient(135deg, #4db6ac, #26a69a, #00897b);
             clip-path: polygon(
                 0 0, 5% 15px, 10% 0, 15% 20px, 20% 5px, 25% 18px, 
                 30% 0, 35% 15px, 40% 8px, 45% 20px, 50% 0, 55% 17px,
@@ -167,13 +167,13 @@
             font-size: 28px;
             font-weight: 700;
             text-shadow: 
-                2px 2px 4px rgba(138, 43, 226, 0.5),
-                0 0 15px rgba(186, 85, 211, 0.4);
+                2px 2px 4px rgba(0, 137, 123, 0.5),
+                0 0 15px rgba(77, 182, 172, 0.4);
             margin-bottom: 8px;
-            animation: spookyBounce 2s ease-in-out infinite;
+            animation: winterBounce 2s ease-in-out infinite;
         }
 
-        @keyframes spookyBounce {
+        @keyframes winterBounce {
             0%, 100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(-4px) scale(1.02); }
         }
@@ -190,7 +190,7 @@
 
         .form-content {
             padding: 40px 30px;
-            background: linear-gradient(to bottom, rgba(255, 250, 255, 0) 0%, rgba(230, 220, 250, 0.3) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(224, 247, 250, 0.3) 100%);
         }
 
         .form-group {
@@ -202,7 +202,7 @@
             display: block;
             margin-bottom: 12px;
             font-weight: 600;
-            color: #7e57c2;
+            color: #00897b;
             font-size: 16px;
             display: flex;
             align-items: center;
@@ -210,40 +210,40 @@
         }
 
         .form-group label i {
-            color: #9575cd;
+            color: #26a69a;
             width: 16px;
         }
 
         .required::after {
             content: ' *';
-            color: #ff6b9d;
+            color: #ff6b6b;
             font-weight: bold;
         }
 
         input[type="text"], select {
             width: 100%;
             padding: 16px 20px;
-            border: 2px solid #d4b5e8;
+            border: 2px solid #b2dfdb;
             border-radius: 14px;
             font-size: 16px;
             transition: all 0.3s ease;
-            background: #faf8ff;
+            background: #f0fffe;
         }
 
         input[type="text"]:focus, select:focus {
             outline: none;
-            border-color: #9575cd;
-            box-shadow: 0 0 0 5px rgba(149, 117, 205, 0.15), 0 0 20px rgba(138, 43, 226, 0.1);
+            border-color: #26a69a;
+            box-shadow: 0 0 0 5px rgba(38, 166, 154, 0.15), 0 0 20px rgba(77, 182, 172, 0.1);
             transform: translateY(-2px);
         }
 
         select {
             cursor: pointer;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239575cd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2326a69a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
             background-position: right 12px center;
             background-repeat: no-repeat;
             background-size: 18px;
-            background-color: #faf8ff;
+            background-color: #f0fffe;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -268,8 +268,8 @@
             display: flex;
             align-items: center;
             padding: 12px 16px;
-            background: #faf8ff;
-            border: 2.5px solid #d4b5e8;
+            background: #f0fffe;
+            border: 2.5px solid #b2dfdb;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -277,30 +277,30 @@
             font-size: 14px;
             gap: 8px;
             margin-bottom: 0;
-            color: #7e57c2;
+            color: #00897b;
         }
 
         .checkbox-item input[type="checkbox"]:checked + label {
-            background: linear-gradient(135deg, #b19cd9, #9575cd);
-            border-color: #7e57c2;
+            background: linear-gradient(135deg, #4db6ac, #26a69a);
+            border-color: #00897b;
             color: white;
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(126, 87, 194, 0.4), 0 0 15px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 137, 123, 0.4), 0 0 15px rgba(77, 182, 172, 0.2);
         }
 
         .checkbox-item label::before {
             content: '';
             width: 20px;
             height: 20px;
-            border: 2.5px solid #9575cd;
+            border: 2.5px solid #26a69a;
             border-radius: 6px;
             background: white;
             transition: all 0.3s ease;
         }
 
         .checkbox-item input[type="checkbox"]:checked + label::before {
-            background: #ff6b9d;
-            border-color: #ff6b9d;
+            background: #ff8a65;
+            border-color: #ff8a65;
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e");
         }
 
@@ -308,6 +308,10 @@
             display: flex;
             gap: 15px;
             margin-top: 12px;
+        }
+
+        .radio-group.ice-ginger-group {
+            gap: 10px;
         }
 
         .radio-item {
@@ -324,30 +328,35 @@
             align-items: center;
             justify-content: center;
             padding: 14px 20px;
-            background: #faf8ff;
-            border: 2.5px solid #d4b5e8;
+            background: #f0fffe;
+            border: 2.5px solid #b2dfdb;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             font-weight: 500;
             gap: 8px;
             margin-bottom: 0;
-            color: #7e57c2;
+            color: #00897b;
+        }
+
+        .ice-ginger-group .radio-item label {
+            padding: 12px 14px;
+            font-size: 14px;
         }
 
         .radio-item input[type="radio"]:checked + label {
-            background: linear-gradient(135deg, #ce93d8, #ba68c8);
-            border-color: #ab47bc;
+            background: linear-gradient(135deg, #80cbc4, #4db6ac);
+            border-color: #26a69a;
             color: white;
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(171, 71, 188, 0.4), 0 0 15px rgba(206, 147, 216, 0.3);
+            box-shadow: 0 6px 20px rgba(38, 166, 154, 0.4), 0 0 15px rgba(77, 182, 172, 0.3);
         }
 
         .radio-item label::before {
             content: '';
             width: 20px;
             height: 20px;
-            border: 2.5px solid #9575cd;
+            border: 2.5px solid #26a69a;
             border-radius: 50%;
             background: white;
             transition: all 0.3s ease;
@@ -356,7 +365,7 @@
         .radio-item input[type="radio"]:checked + label::before {
             background: white;
             border-color: white;
-            box-shadow: inset 0 0 0 5px #ce93d8;
+            box-shadow: inset 0 0 0 5px #80cbc4;
         }
 
         .error-message {
@@ -380,7 +389,7 @@
         .btn-submit {
             width: 100%;
             padding: 20px;
-            background: linear-gradient(135deg, #b19cd9, #9575cd, #7e57c2);
+            background: linear-gradient(135deg, #4db6ac, #26a69a, #00897b);
             color: white;
             border: none;
             border-radius: 14px;
@@ -391,22 +400,22 @@
             position: relative;
             overflow: hidden;
             margin-top: 25px;
-            box-shadow: 0 6px 25px rgba(126, 87, 194, 0.4), 0 0 20px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 6px 25px rgba(0, 137, 123, 0.4), 0 0 20px rgba(77, 182, 172, 0.2);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .btn-submit::before {
-            content: '✨';
+            content: '❄️';
             position: absolute;
             font-size: 20px;
             left: -50px;
             top: 50%;
             transform: translateY(-50%);
-            animation: sparkleMove 2s linear infinite;
+            animation: snowMove 2s linear infinite;
         }
 
-        @keyframes sparkleMove {
+        @keyframes snowMove {
             0% { left: -50px; opacity: 0; }
             50% { opacity: 1; }
             100% { left: calc(100% + 50px); opacity: 0; }
@@ -425,7 +434,7 @@
 
         .btn-submit:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 35px rgba(126, 87, 194, 0.5), 0 0 30px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 10px 35px rgba(0, 137, 123, 0.5), 0 0 30px rgba(77, 182, 172, 0.3);
         }
 
         .btn-submit:hover::after {
@@ -500,26 +509,26 @@
             to { transform: rotate(360deg); }
         }
 
-        /* 蜘蛛網裝飾 */
+        /* 冰晶裝飾 */
         .container::before {
-            content: '🕸️';
+            content: '❄️';
             position: absolute;
             top: 10px;
             right: 15px;
             font-size: 35px;
-            opacity: 0.2;
+            opacity: 0.25;
             z-index: 1;
         }
 
         .container::after {
-            content: '🕸️';
+            content: '🍂';
             position: absolute;
             bottom: 80px;
             left: 15px;
             font-size: 30px;
-            opacity: 0.15;
+            opacity: 0.2;
             z-index: 1;
-            transform: rotate(180deg);
+            transform: rotate(15deg);
         }
     </style>
 </head>
@@ -529,7 +538,7 @@
             <h1><i class="fas fa-bowl-rice"></i> 豆花點餐小幫手(統元豆花)</h1>
             <div class="subtitle">
                 <i class="fas fa-heart"></i>
-                <span>萬聖節特別版 🎃 美味豆花，現在就點！</span>
+                <span>立冬特別版 ❄️ 暖心豆花，溫暖進補！</span>
             </div>
         </div>
         
@@ -581,6 +590,22 @@
                         請選擇豆花種類
                     </div>
                 </div>
+				<div class="form-group">
+					<label class="required">
+						<i class="fas fa-temperature-half"></i>
+						豆花冷熱
+					</label>
+					<div class="radio-group">
+						<div class="radio-item">
+							<input type="radio" id="temp-cold" name="temp" value="冷" checked>
+							<label for="temp-cold">🧊 冷</label>
+						</div>
+						<div class="radio-item">
+							<input type="radio" id="temp-hot" name="temp" value="熱">
+							<label for="temp-hot">🔥 熱</label>
+						</div>
+					</div>
+				</div>
 
                 <div class="form-group">
                     <label class="required">
@@ -631,22 +656,27 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>
-                        <i class="fas fa-snowflake"></i>
-                        是否加冰
-                    </label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="ice-yes" name="ice" value="是" checked>
-                            <label for="ice-yes">❄️ 要加冰</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="ice-no" name="ice" value="否">
-                            <label for="ice-no">🌡️ 不加冰</label>
-                        </div>
-                    </div>
-                </div>
+				<div class="form-group">
+					<label>
+						<i class="fas fa-snowflake"></i>
+						是否加冰或加薑
+					</label>
+					<div class="radio-group">
+						<div class="radio-item">
+							<input type="radio" id="ice-yes" name="iceginger" value="要加冰" checked>
+							<label for="ice-yes">❄️ 要加冰</label>
+						</div>
+						<div class="radio-item">
+							<input type="radio" id="ice-ginger" name="iceginger" value="要加薑">
+							<label for="ice-ginger">🌱  要加薑</label>
+						</div>
+						<div class="radio-item">
+							<input type="radio" id="ice-none" name="iceginger" value="都不加">
+							<label for="ice-none">😌 都不加</label>
+						</div>
+					</div>
+				</div>
+
 
                 <button type="submit" class="btn-submit">
                     <i class="fas fa-paper-plane"></i>
@@ -658,155 +688,268 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        const form = document.getElementById('orderForm');
-        const container = document.querySelector('.container');
+		const form = document.getElementById('orderForm');
+		const container = document.querySelector('.container');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+		const typeSelect = document.getElementById('type');
+		const barleyCheckbox = document.getElementById('barley');
+		const allToppingCheckboxes = document.querySelectorAll('input[name="topping"]');
 
-            // 隱藏所有錯誤訊息
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(msg => msg.style.display = 'none');
+		const tempCold = document.getElementById('temp-cold');
+		const tempHot = document.getElementById('temp-hot');
 
-            let isValid = true;
+		const iceYesRadio = document.getElementById('ice-yes');
+		const gingerRadio = document.getElementById('ice-ginger');
+		const noneRadio = document.getElementById('ice-none');
 
-            // 檢查姓名
-            const nameInput = document.getElementById('name');
-            if (nameInput.value.trim() === '') {
-                document.getElementById('name-error').style.display = 'block';
-                nameInput.focus();
-                isValid = false;
-            }
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
 
-            // 檢查單位
-            const unitInput = document.getElementById('unit');
-            if (unitInput.value.trim() === '') {
-                document.getElementById('unit-error').style.display = 'block';
-                 if (isValid) unitInput.focus();
-                isValid = false;
-            }
+			// 隱藏所有錯誤訊息
+			const errorMessages = document.querySelectorAll('.error-message');
+			errorMessages.forEach(msg => msg.style.display = 'none');
 
+			let isValid = true;
 
-            // 檢查種類
-            const typeSelect = document.getElementById('type');
-            if (typeSelect.value === '') {
-                document.getElementById('type-error').style.display = 'block';
-                if (isValid) typeSelect.focus();
-                isValid = false;
-            }
+			// 檢查姓名
+			const nameInput = document.getElementById('name');
+			if (nameInput.value.trim() === '') {
+				document.getElementById('name-error').style.display = 'block';
+				nameInput.focus();
+				isValid = false;
+			}
 
-            // 檢查配料
-            const toppingCheckboxes = document.querySelectorAll('input[name="topping"]:checked');
-            if (toppingCheckboxes.length === 0 || toppingCheckboxes.length > 3) {
-                document.getElementById('topping-error').style.display = 'block';
-                isValid = false;
-            }
+			// 檢查單位
+			const unitInput = document.getElementById('unit');
+			if (unitInput.value.trim() === '') {
+				document.getElementById('unit-error').style.display = 'block';
+				if (isValid) unitInput.focus();
+				isValid = false;
+			}
 
-            if (isValid) {
-                // 添加載入效果
-                container.classList.add('loading');
-                
-                const name = nameInput.value;
+			// 檢查種類
+			if (typeSelect.value === '') {
+				document.getElementById('type-error').style.display = 'block';
+				if (isValid) typeSelect.focus();
+				isValid = false;
+			}
+
+			// 檢查配料
+			const checkedToppings = document.querySelectorAll('input[name="topping"]:checked');
+			if (checkedToppings.length === 0 || checkedToppings.length > 3) {
+				document.getElementById('topping-error').style.display = 'block';
+				isValid = false;
+			}
+
+			if (isValid) {
+				// 添加載入效果
+				container.classList.add('loading');
+
+				const name = nameInput.value;
 				const unit = unitInput.value;
-                const type = typeSelect.value;
+				const type = typeSelect.value;
 
-                const toppings = Array.from(toppingCheckboxes).map(cb => cb.value).join(', ');
-                const ice = document.querySelector('input[name="ice"]:checked').value;
-                
-                setTimeout(() => {
-                    
-                    // Google Forms 提交
-                    const data = {
-                        'entry.2104530092': name,
+				const temp = document.querySelector('input[name="temp"]:checked').value;
+				const toppings = Array.from(checkedToppings).map(cb => cb.value).join(', ');
+				const iceginger = document.querySelector('input[name="iceginger"]:checked').value;
+
+				setTimeout(() => {
+					// Google Forms 提交
+					const data = {
+						'entry.2104530092': name,
 						'entry.289096839': unit,
-                        'entry.989584200': type,
-                        'entry.579343790': toppings,
-                        'entry.736923634': ice
-                    };
-                    
-                    $.ajax({
-                        type: 'POST',
-                        url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSefbsuBZvQOZevOfllYpqdaCmStHnXim7zNR0Dh-ls7YyFvRw/formResponse',
-                        data: data,
-                        contentType: 'application/json',
-                        dataType: 'jsonp',
-                        complete: function() {
-                            setTimeout(() => {
-                                container.classList.remove('loading');
-                                alert('✅ 資料已成功送出！謝謝您！');
-                                form.reset();
-                            }, 500);
-                        }
-                    });
-                }, 1000);
-            }
-        });
+						'entry.989584200': type,
+						'entry.868409599': temp,
+						'entry.579343790': toppings,
+						'entry.736923634': iceginger
+						// TODO: 若 Google 表單有新增「豆花冷熱」欄位，請在此補上對應 entry
+						// 例如：'entry.xxxxxx': temp
+					};
 
-        // 豆花種類變更時的邏輯
-        const typeSelect = document.getElementById('type');
-        const barleyCheckbox = document.getElementById('barley');
-        
-        function updateToppingAvailability() {
-            const selectedType = typeSelect.value;
-            
-            // 如果選擇仙草豆花，禁用薏仁湯選項
-            if (selectedType === '仙草') {
-                barleyCheckbox.disabled = true;
-                barleyCheckbox.checked = false;
-                barleyCheckbox.parentElement.style.opacity = '0.4';
-                barleyCheckbox.parentElement.style.pointerEvents = 'none';
-            } else {
-                barleyCheckbox.disabled = false;
-                barleyCheckbox.parentElement.style.opacity = '1';
-                barleyCheckbox.parentElement.style.pointerEvents = 'auto';
-            }
-        }
+					$.ajax({
+						type: 'POST',
+						url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSerkIwPeYKcs0WeGqDus8LMkdJHul5hi5pAk_lyruLd8fp65A/formResponse',
+						data: data,
+						contentType: 'application/json',
+						dataType: 'jsonp',
+						complete: function() {
+							setTimeout(() => {
+								container.classList.remove('loading');
+								alert('✅ 資料已成功送出！謝謝您！');
+								form.reset();
 
-        typeSelect.addEventListener('change', updateToppingAvailability);
+								// reset 後恢復預設狀態
+								tempCold.checked = true;
+								updateTempOptions();
+								updateToppingAvailability();
+								updateIceGingerOptions();
+							}, 500);
+						}
+					});
+				}, 1000);
+			}
+		});
 
-        // 即時驗證配料數量
-        const toppingCheckboxes = document.querySelectorAll('input[name="topping"]');
-        toppingCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                const checkedCount = document.querySelectorAll('input[name="topping"]:checked').length;
-                
-                if (checkedCount >= 3) {
-                    toppingCheckboxes.forEach(cb => {
-                        if (!cb.checked && !cb.disabled) {
-                            cb.disabled = true;
-                            cb.parentElement.style.opacity = '0.5';
-                        }
-                    });
-                } else {
-                    toppingCheckboxes.forEach(cb => {
-                        if (cb.id !== 'barley' || typeSelect.value !== '仙草') {
-                            cb.disabled = false;
-                            cb.parentElement.style.opacity = '1';
-                        }
-                    });
-                    // 重新檢查豆花種類限制
-                    updateToppingAvailability();
-                }
-                
-                // 隱藏錯誤訊息
-                if (checkedCount > 0 && checkedCount <= 3) {
-                    document.getElementById('topping-error').style.display = 'none';
-                }
-            });
-        });
+		// 根據豆花種類，控制薏仁湯可不可選（#3）
+		function updateToppingAvailability() {
+			const selectedType = typeSelect.value;
 
-        // 輸入框即時驗證
-        document.getElementById('name').addEventListener('input', function() {
-            if (this.value.trim() !== '') {
-                document.getElementById('name-error').style.display = 'none';
-            }
-        });
+			if (selectedType === '布丁' || selectedType === '仙草') {
+				barleyCheckbox.disabled = true;
+				barleyCheckbox.checked = false;
+				barleyCheckbox.parentElement.style.opacity = '0.4';
+				barleyCheckbox.parentElement.style.pointerEvents = 'none';
+			} else {
+				barleyCheckbox.disabled = false;
+				barleyCheckbox.parentElement.style.opacity = '1';
+				barleyCheckbox.parentElement.style.pointerEvents = 'auto';
+			}
+		}
 
-        document.getElementById('type').addEventListener('change', function() {
-            if (this.value !== '') {
-                document.getElementById('type-error').style.display = 'none';
-            }
-        });
-    </script>
+		// 根據豆花種類，控制冷/熱選項（#1, #2）
+		function updateTempOptions() {
+			const selectedType = typeSelect.value;
+
+			if (selectedType === '布丁') {
+				// 布丁豆花沒有「熱」選項
+				tempHot.disabled = true;
+				tempHot.checked = false;
+				tempHot.parentElement.style.opacity = '0.4';
+				tempHot.parentElement.style.pointerEvents = 'none';
+
+				tempCold.disabled = false;
+				tempCold.parentElement.style.opacity = '1';
+				tempCold.parentElement.style.pointerEvents = 'auto';
+
+				if (!tempCold.checked) {
+					tempCold.checked = true;
+				}
+			} else {
+				// 其他種類：冷熱都可以選
+				tempHot.disabled = false;
+				tempHot.parentElement.style.opacity = '1';
+				tempHot.parentElement.style.pointerEvents = 'auto';
+
+				tempCold.disabled = false;
+				tempCold.parentElement.style.opacity = '1';
+				tempCold.parentElement.style.pointerEvents = 'auto';
+			}
+		}
+
+		// 根據冷/熱 + 豆花種類，控制「是否加冰或加薑」選項（#4, #5, #6, #7）
+		function updateIceGingerOptions() {
+			const tempRadio = document.querySelector('input[name="temp"]:checked');
+			const currentTemp = tempRadio ? tempRadio.value : null;
+			const selectedType = typeSelect.value; // '豆花', '布丁', '仙草' 或 ''
+
+			// 先全部恢復可選
+			[iceYesRadio, gingerRadio, noneRadio].forEach(r => {
+				r.disabled = false;
+				r.parentElement.style.opacity = '1';
+				r.parentElement.style.pointerEvents = 'auto';
+			});
+
+			if (!currentTemp) return;
+
+			if (currentTemp === '冷') {
+				// 冷：只能「要加冰」或「都不加」（#5）
+				gingerRadio.disabled = true;
+				gingerRadio.checked = false;
+				gingerRadio.parentElement.style.opacity = '0.4';
+				gingerRadio.parentElement.style.pointerEvents = 'none';
+
+				if (!iceYesRadio.checked && !noneRadio.checked) {
+					iceYesRadio.checked = true;
+				}
+			} else if (currentTemp === '熱') {
+				if (selectedType === '豆花') {
+					// 熱 + 傳統豆花：只能「要加薑」或「都不加」（#6）
+					iceYesRadio.disabled = true;
+					iceYesRadio.checked = false;
+					iceYesRadio.parentElement.style.opacity = '0.4';
+					iceYesRadio.parentElement.style.pointerEvents = 'none';
+
+					if (!gingerRadio.checked && !noneRadio.checked) {
+						gingerRadio.checked = true;
+					}
+				} else if (selectedType === '仙草') {
+					// 熱 + 嫩仙草凍：只能「都不加」（#7）
+					iceYesRadio.disabled = true;
+					iceYesRadio.checked = false;
+					iceYesRadio.parentElement.style.opacity = '0.4';
+					iceYesRadio.parentElement.style.pointerEvents = 'none';
+
+					gingerRadio.disabled = true;
+					gingerRadio.checked = false;
+					gingerRadio.parentElement.style.opacity = '0.4';
+					gingerRadio.parentElement.style.pointerEvents = 'none';
+
+					noneRadio.checked = true;
+				} else {
+					// 熱 + 其他（例如尚未選豆花種類）：暫時不限制
+				}
+			}
+		}
+
+		// 豆花種類變更時的邏輯
+		typeSelect.addEventListener('change', function() {
+			if (this.value !== '') {
+				document.getElementById('type-error').style.display = 'none';
+			}
+			updateToppingAvailability();
+			updateTempOptions();
+			updateIceGingerOptions();
+		});
+
+		// 冷/熱變更時更新冰/薑選項
+		document.querySelectorAll('input[name="temp"]').forEach(radio => {
+			radio.addEventListener('change', function() {
+				updateIceGingerOptions();
+			});
+		});
+
+		// 即時驗證配料數量＋維持薏仁限制
+		allToppingCheckboxes.forEach(checkbox => {
+			checkbox.addEventListener('change', function() {
+				const checkedCount = document.querySelectorAll('input[name="topping"]:checked').length;
+
+				if (checkedCount >= 3) {
+					allToppingCheckboxes.forEach(cb => {
+						if (!cb.checked && !cb.disabled) {
+							cb.disabled = true;
+							cb.parentElement.style.opacity = '0.5';
+						}
+					});
+				} else {
+					allToppingCheckboxes.forEach(cb => {
+						// 這裡要注意布丁/嫩仙草的薏仁限制
+						if (cb.id !== 'barley' || (typeSelect.value !== '布丁' && typeSelect.value !== '仙草')) {
+							cb.disabled = false;
+							cb.parentElement.style.opacity = '1';
+						}
+					});
+					updateToppingAvailability();
+				}
+
+				// 隱藏錯誤訊息
+				if (checkedCount > 0 && checkedCount <= 3) {
+					document.getElementById('topping-error').style.display = 'none';
+				}
+			});
+		});
+
+		// 輸入框即時驗證
+		document.getElementById('name').addEventListener('input', function() {
+			if (this.value.trim() !== '') {
+				document.getElementById('name-error').style.display = 'none';
+			}
+		});
+
+		// 頁面載入時先跑一次規則
+		updateToppingAvailability();
+		updateTempOptions();
+		updateIceGingerOptions();
+	</script>
+
 </body>
 </html>
